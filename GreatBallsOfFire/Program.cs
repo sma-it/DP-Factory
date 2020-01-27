@@ -5,6 +5,7 @@ namespace GreatBallsOfFire
     class Program
     {
         static bool hero = false;
+        static FireballFactory factory = new FireballFactory();
 
         static void Main(string[] args)
         {
@@ -23,10 +24,10 @@ namespace GreatBallsOfFire
             Fireball ball;
             if (hero)
             {
-                ball = new Fireball("purple", 6, 0, 0, 7);
+                ball = factory.createHeroShadow();
             } else
             {
-                ball = new Fireball("deep purple", 3, 0, 0, 3.5f);
+                ball = factory.createShadow();
             }
             ball.Cast();
         }
@@ -36,11 +37,11 @@ namespace GreatBallsOfFire
             Fireball ball;
             if (hero)
             {
-                ball = new Fireball("red", 12, 8, 0, 0);
+                ball = factory.createHeroDamage();
             }
             else
             {
-                ball = new Fireball("pink", 6, 5.6f, 0, 0);
+                ball = factory.createDamage();
             }
             ball.Cast();
         }
@@ -50,11 +51,11 @@ namespace GreatBallsOfFire
             Fireball ball;
             if (hero)
             {
-                ball = new Fireball("green", 20, 0, 12, 0);
+                ball = factory.createHeroHealing();
             }
             else
             {
-                ball = new Fireball("slightly green", 2, 0, 3, 0);
+                ball = factory.createHealing();
             }
             ball.Cast();
         }
