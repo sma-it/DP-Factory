@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace GreatBallsOfFire
+namespace GreatBallsOfFire.Fireball
 {
     class Fireball
     {
